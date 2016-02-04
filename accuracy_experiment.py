@@ -6,15 +6,14 @@ import numpy as np
 
 import sys
 
-if len(sys.argv) != 4:
-    print 'Usage: python accuracy_experiment.py <# features> <# bins> <# trials>'
+if len(sys.argv) != 5:
+    print 'Usage: python accuracy_experiment.py <# features> <# bins> <#training examples> <# trials>'
     sys.exit(1)
 
 NUM_FEATURES = int(sys.argv[1])
 NUM_BINS = int(sys.argv[2])
-NUM_TRIALS = int(sys.argv[3])
-
-NUM_TRAINING_EXAMPLES = 100
+NUM_TRAINING_EXAMPLES = int(sys.argv[3])
+NUM_TRIALS = int(sys.argv[4])
 
 def single_run(num_bins):
     t_truth = np.random.rand(NUM_FEATURES, 1)
